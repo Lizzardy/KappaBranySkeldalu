@@ -13,14 +13,18 @@ public:
     View(QGraphicsScene *scene);
 public slots:
     void handleButton();
+    void handleButton1();
+    void handleButton2();
 
 private:
     int width;
     int height;
 
-
+    void textItems();
     void menuButtons();
     void moveButtons();
+
+    QGraphicsTextItem *zivotyItem;
 
     QPushButton *button_1;
     QPushButton *button_2;

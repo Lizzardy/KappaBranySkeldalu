@@ -22,6 +22,6 @@ void Player::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 {
 //    painter->setBrush(QBrush(Qt::red));
 //    painter->drawRect(boundingRect());
-    QImage image("R:/soukrome/PRO III/brany_skeldalu/img/character_1.png");
-    painter->drawImage(QPoint(0,0),image/*.scaled(80,80)*/);
+    QImage image("../brany_skeldalu/img/character_1.png");
+    painter->drawImage(QPoint(0,0),image);
 }
