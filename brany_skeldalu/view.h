@@ -3,6 +3,7 @@
 #include <QGraphicsView>
 #include <QPushButton>
 #include "player.h"
+#include "enemy.h"
 
 class View : public QGraphicsView
 {
@@ -13,18 +14,14 @@ public:
     View(QGraphicsScene *scene);
 public slots:
     void handleButton();
-    void handleButton1();
-    void handleButton2();
 
 private:
     int width;
     int height;
 
-    void textItems();
+
     void menuButtons();
     void moveButtons();
-
-    QGraphicsTextItem *zivotyItem;
 
     QPushButton *button_1;
     QPushButton *button_2;
@@ -37,7 +34,9 @@ private:
     QPushButton *button_go;
 
     Player *player;
+    Enemy *enemy;
     void CreatePlayer();
+    void CreateEnemy();
 };
 
 #endif // VIEW_H

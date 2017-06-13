@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     view.cpp \
-    player.cpp
+    player.cpp \
+    enemy.cpp
 
 HEADERS  += mainwindow.h \
     view.h \
-    player.h
+    player.h \
+    enemy.h
 
 FORMS    += mainwindow.ui

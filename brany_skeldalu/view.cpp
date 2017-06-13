@@ -19,12 +19,10 @@ View::View(QGraphicsScene *scene)
 
 
     CreatePlayer();
-    textItems();
+    CreateEnemy();
     menuButtons();
     moveButtons();
     connect(button_left, SIGNAL(clicked(bool)), this, SLOT(handleButton()));
-    connect(button_right, SIGNAL(clicked(bool)), this, SLOT(handleButton1()));
-    connect(button_go, SIGNAL(clicked(bool)), this, SLOT(handleButton2()));
 
 
 
@@ -33,42 +31,9 @@ View::View(QGraphicsScene *scene)
 void View::handleButton()
 {
     this->scene()->addRect(0,0,width,height,
-                           QPen(Qt::black),QBrush(QColor(150,255,200)));
+                           QPen(Qt::black),QBrush(QColor(150,10,100)));
 
     qDebug()<< "booom";
-}
-void View::handleButton1()
-{
-    this->scene()->addRect(0,0,width,height,
-                           QPen(Qt::black),QBrush(QColor(255,50,10)));
-
-    qDebug()<< "booom";
-}
-void View::handleButton2()
-{
-    this->scene()->addRect(0,0,width,height,
-                           QPen(Qt::black),QBrush(QColor(0,100,255)));
-
-    qDebug()<< "booom";
-}
-
-void View::textItems()
-{
-    QFont font("Helvetica [Cronyx]", 18);
-    font.setBold(true);
-
-
-
-    zivotyItem = new QGraphicsTextItem("100❤");
-    zivotyItem->setPos(-580,400);
-    zivotyItem->setFont(font);
-    this->scene()->addItem(zivotyItem);
-
-//    // prikaz gameOverItem->textWidth();//nefunguje...
-//    gameOverItem->setPos((width-gameOverItem->boundingRect().width())/2.0,
-//                         height/2- gameOverItem->boundingRect().height()/2);
-//    gameOverItem->setPlainText("");
-//    this->scene()->addItem(gameOverItem);
 }
 
 void View::menuButtons()
@@ -111,3 +76,12 @@ void View::CreatePlayer()
     player->setPos(width-1600 - player->boundingRect().width(),
                    height-500 - player->boundingRect().height());
 }
+
+void View::CreateEnemy()
+{
+    enemy = new Enemy();
+    this->scene()->addItem(enemy);
+    enemy->setPos(width-1250 - enemy->boundingRect().width(),
+                   height-500 - enemy->boundingRect().height());
+}
+
